@@ -47,3 +47,4 @@ output.logstash:
 processors:
   - add_host_metadata: ~
   - add_cloud_metadata: ~
+
