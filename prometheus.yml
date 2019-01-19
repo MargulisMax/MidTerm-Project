@@ -18,7 +18,7 @@ scrape_configs:
 
   - job_name: 'DummyApp'
     consul_sd_configs:
-     - server: 'Consul-Server.node.consul:8500'
+     - server: 'localhost:8500'
        services: ['web']
        allow_stale: false
        refresh_interval: 15s
