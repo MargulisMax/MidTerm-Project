@@ -8,8 +8,7 @@ filebeat.inputs:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - /var/log/messages
-    - /var/log/secure
+    - /var/log/*.log
 
 #============================= Filebeat modules ===============================
 
