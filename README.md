@@ -17,5 +17,5 @@ Note! Public-IP will be outputed by Terraform on successfull deployment.
 Consul: http://Consul_PIP:8500
 Kibana: http://Grafana_PIP:5601
 Prometheus: http://Kibana_PIP:9090
-Grafana: http://Prometheus_PIP:3000
+Grafana: http://Prometheus_PIP:3000 (credentials admin:admin, skip new password creation.)
 ```
