@@ -1,4 +1,5 @@
 provider "aws" {
+  shared_credentials_file = "~/.aws/credentials"
   region = "${var.region}"
 }
 resource "tls_private_key" "new_key" {
