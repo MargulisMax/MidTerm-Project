@@ -72,6 +72,12 @@ resource "aws_security_group" "security-group" {
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
+    from_port = 8300
+    protocol = "udp"
+    to_port = 8303
+    cidr_blocks = ["${var.all-ip-range}"]
+  }
+  ingress {
     from_port = 9200
     protocol = "tcp"
     to_port = 9200
