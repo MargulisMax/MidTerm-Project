@@ -48,85 +48,67 @@ resource "aws_route_table_association" "route-table-association" {
 resource "aws_security_group" "security-group" {
   vpc_id = "${aws_vpc.vpc.id}"
   ingress {
-    from_port = 0
+    from_port = 80
     protocol = "tcp"
     to_port = 80
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
+    from_port = 8500
     protocol = "tcp"
     to_port = 8500
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
+    from_port = 8600
     protocol = "tcp"
     to_port = 8600
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
-    protocol = "tcp"
-    to_port = 8300
-    cidr_blocks = ["${var.all-ip-range}"]
-  }
-  ingress {
-    from_port = 0
-    protocol = "tcp"
-    to_port = 8301
-    cidr_blocks = ["${var.all-ip-range}"]
-  }
-  ingress {
-    from_port = 0
-    protocol = "tcp"
-    to_port = 8302
-    cidr_blocks = ["${var.all-ip-range}"]
-  }
-  ingress {
-    from_port = 0
+    from_port = 8300
     protocol = "tcp"
     to_port = 8303
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
+    from_port = 9200
     protocol = "tcp"
     to_port = 9200
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
+    from_port = 9300
     protocol = "tcp"
     to_port = 9300
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
+    from_port = 5044
     protocol = "tcp"
     to_port = 5044
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
+    from_port = 5601
     protocol = "tcp"
     to_port = 5601
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
+    from_port = 9090
     protocol = "tcp"
     to_port = 9090
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
+    from_port = 3000
     protocol = "tcp"
     to_port = 3000
     cidr_blocks = ["${var.all-ip-range}"]
   }
   ingress {
-    from_port = 0
+    from_port = 22
     protocol = "tcp"
     to_port = 22
     cidr_blocks = ["${var.all-ip-range}"]
