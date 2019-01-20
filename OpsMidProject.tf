@@ -18,6 +18,7 @@ resource "aws_vpc" "vpc" {
 }
 resource "aws_subnet" "subnet-servers" {
   cidr_block = "${var.cidr-subnet-servers}"
+  map_public_ip_on_launch = true
   availability_zone = "${var.azone}"
   vpc_id = "${aws_vpc.vpc.id}"
   tags {
