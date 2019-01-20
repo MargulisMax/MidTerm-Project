@@ -18,7 +18,7 @@ variable "all-ip-range" {
 }
 variable "aws-ami" {
   description = "Amazon Linux 2 - x64"
-  default = "ami-0f8c82faeb08f15da"
+  default = "ami-035be7bafff33b6b6"
 }
 variable "aws-ami-type-t2" {
   default = "t2.micro"
