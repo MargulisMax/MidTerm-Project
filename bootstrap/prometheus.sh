@@ -14,7 +14,7 @@ sudo rm -f consul_1.4.0_linux_amd64.zip
 sudo mv consul /usr/bin/
 sudo mkdir /etc/consul.d
 sudo mkdir /var/lib/consul
-sudo consul agent -bind `hostname -i` -data-dir /var/lib/consul -config-dir /etc/consul.d -node=Prometheus -retry-join "provider=aws tag_key=Name tag_value=MTP-Consul" &
+sudo consul agent -bind `ec2-metadata -o| cut -d " " -f2` -data-dir /var/lib/consul -config-dir /etc/consul.d -node=Prometheus -retry-join "provider=aws tag_key=Name tag_value=MTP-Consul" &
 sudo tar -xzvf prometheus-2.6.0.linux-amd64.tar.gz
 sudo rm *.tar.gz
 sudo mkdir /opt/prometheus

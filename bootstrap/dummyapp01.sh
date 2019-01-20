@@ -25,7 +25,7 @@ sudo mv consul /usr/bin/
 sudo mkdir /etc/consul.d
 sudo mkdir /var/lib/consul
 sudo mv web.json /etc/consul.d/
-sudo consul agent -bind `hostname -i` -data-dir /var/lib/consul -config-dir /etc/consul.d -node=DummyNode1 -retry-join "provider=aws tag_key=Name tag_value=MTP-Consul" &
+sudo consul agent -bind `ec2-metadata -o| cut -d " " -f2` -data-dir /var/lib/consul -config-dir /etc/consul.d -node=DummyNode1 -retry-join "provider=aws tag_key=Name tag_value=MTP-Consul" &
 sudo touch /etc/yum.repos.d/elastic-stack.repo
 cat <<EOL | sudo tee /etc/yum.repos.d/elastic-stack.repo
 [elasticsearch-6.x]

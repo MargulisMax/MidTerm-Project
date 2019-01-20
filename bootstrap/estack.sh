@@ -13,7 +13,7 @@ sudo rm -f consul_1.4.0_linux_amd64.zip
 sudo mv consul /usr/bin/
 sudo mkdir /etc/consul.d
 sudo mkdir /var/lib/consul
-sudo consul agent -bind `hostname -i` -data-dir /var/lib/consul -config-dir /etc/consul.d -node=ELK -retry-join "provider=aws tag_key=Name tag_value=MTP-Consul" &
+sudo consul agent -bind `ec2-metadata -o| cut -d " " -f2` -data-dir /var/lib/consul -config-dir /etc/consul.d -node=ELK -retry-join "provider=aws tag_key=Name tag_value=MTP-Consul" &
 sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 sudo touch /etc/yum.repos.d/elastic-stack.repo
 cat <<EOL | sudo tee /etc/yum.repos.d/elastic-stack.repo
